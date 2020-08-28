@@ -36,3 +36,9 @@ export default () => {
   )
 }
 ```
+
+## 🌟 社区互助
+
+| Github Issue                                      | 钉钉群                                                                                     | 微信群                                                                                   |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| [issues](https://github.com/pansyjs/react-watermark/issues) | <img src="https://github.com/alitajs/alita/blob/master/public/dingding.png" width="100" /> | <img src="https://github.com/alitajs/alita/blob/master/public/wechat.png" width="100" /> |
