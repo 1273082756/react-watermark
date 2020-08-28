@@ -1,6 +1,6 @@
 {
   "name": "@pansy/react-watermark",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "repository": "git@github.com:pansyjs/react-watermark.git",
   "main": "lib/index.js",
   "module": "es/index.js",
