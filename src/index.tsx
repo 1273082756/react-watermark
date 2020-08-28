@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { getStyleStr, genRandomId, getDrawPatternByCanvas } from './utils';
 import SecurityDefense from './security-defense';
 import { Options, Observers } from './interface';
@@ -75,12 +75,13 @@ const Watermark: React.FC<WatermarkProps> = ({
   const waterMarkStyle = getStyleStr(defaultStyle);
 
 
-  const security = React.useRef<any>(null);
-  const DOMRemoveObserver = React.useRef<any>();
-  const DOMAttrModifiedObserver = React.useRef<any>();
+  const security = useRef<SecurityDefense>(null);
+  const DOMRemoveObserver = useRef<any>();
+  const DOMAttrModifiedObserver = useRef<any>();
 
-  React.useEffect(() => {
+  useLayoutEffect(() => {
     if (monitor) {
+      disconnect();
       security.current = new SecurityDefense(
         {
           watermarkId: watermarkId,
@@ -97,11 +98,15 @@ const Watermark: React.FC<WatermarkProps> = ({
       );
     }
     return () => {
-      DOMRemoveObserver.current && DOMRemoveObserver.current.disconnect();
-      DOMAttrModifiedObserver.current && DOMAttrModifiedObserver.current.disconnect();
-      security.current = null;
+      disconnect();
     }
-  }, []);
+  }, [JSON.stringify(text), monitor]);
+
+  const disconnect = () => {
+    DOMRemoveObserver.current && DOMRemoveObserver.current.disconnect();
+    DOMAttrModifiedObserver.current && DOMAttrModifiedObserver.current.disconnect();
+    security.current = null;
+  }
 
   const getCanvasUrl = () => {
     const newOptions = Object.assign({}, defaultOptions, options)

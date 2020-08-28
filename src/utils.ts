@@ -9,6 +9,10 @@ export const genRandomId = (prefix = '') => {
   return `${encrypt(prefix)}-${(new Date()).getTime()}-${Math.floor(Math.random() * Math.pow(10, 8))}`
 }
 
+/**
+ * 将样式对象转换为字符串
+ * @param style
+ */
 export const getStyleStr = (style: CSSProperties = {}): string => {
   let str = '';
 
@@ -23,7 +27,6 @@ export const getStyleStr = (style: CSSProperties = {}): string => {
 export function getDevicePixelRatio(): number {
   return window.devicePixelRatio ? Math.round(window.devicePixelRatio) : 2
 }
-
 
 /**
  * 获取 MutationObserver 对象
