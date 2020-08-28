@@ -96,6 +96,8 @@ const Watermark: React.FC<WatermarkProps> = ({
           updateObserver: updateObserver
         }
       );
+    } else {
+      disconnect();
     }
     return () => {
       disconnect();
