@@ -26,13 +26,13 @@ import Watermark from '@pansy/react-watermark';
 
 export default () => {
   return (
-    <WaterMark style={{ width: 500, height: '100%' }} text="测试水印">
+    <Watermark style={{ width: 500, height: '100%' }} text="测试水印">
       <div>
         <button>
           123
         </button>
       </div>
-    </WaterMark>
+    </Watermark>
   )
 }
 ```
