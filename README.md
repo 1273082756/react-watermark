@@ -2,6 +2,8 @@
 
 <h4 align="center">水印组件<h4>
 
+> 该组件将在 [react-components](https://github.com/pansyjs/react-components) 维护
+
 ## ✨ 特性
 
 * 🚀 支持一个页面添加多处不同水印
